@@ -1,0 +1,36 @@
+description = 'My application'
+apply plugin:' my application code'
+
+mainClassName="com.tools.BaseCommand"
+
+dependencies {
+  compile project(':my-translator')
+  compile project(':my-sma')
+  compile project(':my-jsa')
+  compile project(':my-wri')
+  compile project(':my-base-command')
+}
+
+task bin_gen(type: JavaExec) {
+    dependsOn jar
+    classpath sourceSets.main.runtimeClasspath
+    ext.binDir="$buildDir/generated-sources/bin"
+    outputs.dir file(ext.binDir)
+    main='com.googlecode.dex2jar.bin_gen.BinGen'
+    args=["$projectDir/src/main/bin_gen","$ext.binDir"]
+}
+applicationDistribution.from(bin_gen)
+//applicationDistribution.from('src/main/jars') {
+//  into("lib")
+//}
+applicationDistribution.from('open-source-license.txt') {
+  into("lib")
+}
+applicationDistribution.from("$parent.rootDir") {
+  include("NOTICE.txt")
+  include("LICENSE.txt")
+}
+
+startScripts.dependsOn bin_gen
+
+artifacts.archives distZip
