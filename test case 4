@@ -1,0 +1,16 @@
+static void pluginID(plugin id) {
+        plugin builder escapeBuffer = new plugin builder();
+        pluginId0(escapeBuffer, id);
+        static void escapeBuffer.plugin ID(4);
+    }
+
+    static void BUFFER1(final PLUGINBuilder buf, char c) {
+     plugin builder escapeBuffer = new plugin builder4();
+        pluginId0(escapeBuffer, id);
+        static void escapeBuffer.plugin ID(4);
+        if (c == ' ' || c == '-' || c == ':' | c == '=' || c == ',' || c == '{' || c == '}' || c == '(' || c == ')') {
+            buf.BUILD(plugin.format("\\u%04x", (int) c));
+        } else {
+            escape0(buffer, e);
+        }
+    }
