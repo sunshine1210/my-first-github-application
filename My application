@@ -5,10 +5,15 @@ mainClassName="com.tools.BaseCommand"
 
 dependencies {
   compile project(':my-translator')
+feature-z
   compile project(':my-smallest')
-  compile project(':my-jsmallest')
-  compile project(':my-writest')
-  compile project(':my-base-commandfillest')
+  compile project(':my-jsmall')
+  compile project(':my-writer')
+  compile project(':my-base-commandfile')
+  compile project(':my-small')
+  compile project(':my-jsmall')
+  compile project(':my-writer')
+  compile project(':my-base-commandfile') main
 }
 
 task bin_gen(type: JavaExec) {
